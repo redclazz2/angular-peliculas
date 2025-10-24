@@ -1,0 +1,32 @@
+<button (click)="agregarPeli()" >Agregar Peli</button>
+
+@if (!peliculas) {
+  <img src="Loading.gif" />
+}@else if(peliculas.length > 0){
+  @for (item of peliculas; track $index) {
+    <div class="contenedor-pelicula" style="display: flex; flex-direction: row; gap: 10px;">
+      <div>
+        @if(item.poster == ''){
+            <img src="default_poster.jpg" width="170" height="270"/>
+        }@else {
+            <img [ngSrc]="item.poster" [priority]="$index == 0" width="170" height="270"/>
+        }
+      </div>
+
+      <div>
+        <p>{{ $index }}) {{ item.titulo}}</p>
+        <p>
+          Fecha de lanzamiento:
+          {{ item.fechaLanzamiento | date : "dd-MMMM-yy" | uppercase }}
+        </p>
+        <p>Precio: {{ item.precio | currency }}</p>
+      </div>
+
+      <div>
+        <button (click)="eliminarPelicula(item)">Eliminar Peli</button>
+      </div>
+    </div>
+  }
+}@else {
+  <p>No hay peliculas para mostrar ... </p>
+}
