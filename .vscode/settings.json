@@ -1,0 +1,5 @@
+{
+    "angular.log": "off",
+    "angular.enable-strict-mode-prompt": true,
+    "typescript.preferences.includePackageJsonAutoImports": "on"
+}

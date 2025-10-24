@@ -1,13 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { ListadoPeliculasComponent } from './peliculas/listado-peliculas/listado-peliculas.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @Component({
   selector: 'app-root',
-  imports: [ListadoPeliculasComponent],
+  imports: [
+    MatAutocompleteModule,
+    ListadoPeliculasComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
+  title: string = "";
   peliculasEnCines!: any[];
   peliculasEstrenos!: any[];
 

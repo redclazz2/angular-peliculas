@@ -34,7 +34,11 @@
       </div>
 
       <div>
-        <button (click)="eliminarPelicula(item)">Eliminar Peli</button>
+        <button mat-flat-button (click)="eliminarPelicula(item)">
+          <mat-icon>
+            delete
+          </mat-icon>
+          Eliminar Peli</button>
       </div>
     </div>
     }

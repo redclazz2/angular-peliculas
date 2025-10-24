@@ -5,11 +5,21 @@ import {
   UpperCasePipe,
 } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { ListadoGenericoComponent } from "../../compartidos/componentes/listado-generico/listado-generico.component";
+import { MatButtonModule } from '@angular/material/button';
+import { ListadoGenericoComponent } from '../../compartidos/componentes/listado-generico/listado-generico.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-listado-peliculas',
-  imports: [DatePipe, UpperCasePipe, CurrencyPipe, NgOptimizedImage, ListadoGenericoComponent],
+  imports: [
+    MatButtonModule,
+    MatIconModule,
+    DatePipe,
+    UpperCasePipe,
+    CurrencyPipe,
+    NgOptimizedImage,
+    ListadoGenericoComponent,
+  ],
   templateUrl: './listado-peliculas.component.html',
   styleUrl: './listado-peliculas.component.css',
 })
@@ -22,12 +32,14 @@ export class ListadoPeliculasComponent {
       titulo: 'Oppenheimer 2',
       fechaLanzamiento: new Date('2016-05-03'),
       precio: 300.99,
-      poster:'',
+      poster: '',
     });
   }
 
-  public eliminarPelicula(peli : any): void{
-    const indice = this.peliculas.findIndex((peliculaActual:  any) => peliculaActual.titulo ==  peli.titulo);
-    this.peliculas.splice(indice,1);
+  public eliminarPelicula(peli: any): void {
+    const indice = this.peliculas.findIndex(
+      (peliculaActual: any) => peliculaActual.titulo == peli.titulo
+    );
+    this.peliculas.splice(indice, 1);
   }
 }
