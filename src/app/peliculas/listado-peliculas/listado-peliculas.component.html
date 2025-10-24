@@ -1,20 +1,31 @@
-<button (click)="agregarPeli()" >Agregar Peli</button>
+<button (click)="agregarPeli()">Agregar Peli</button>
 
-@if (!peliculas) {
-  <img src="Loading.gif" />
-}@else if(peliculas.length > 0){
-  @for (item of peliculas; track $index) {
-    <div class="contenedor-pelicula" style="display: flex; flex-direction: row; gap: 10px;">
+<app-listado-generico [listado]="peliculas">
+    <div NoContent>
+        <p style="color: red;">No hay peliculas disponibles.</p>
+    </div>
+
+  <div Peliculas>
+    @for (item of peliculas; track $index) {
+    <div
+      class="contenedor-pelicula"
+      style="display: flex; flex-direction: row; gap: 10px"
+    >
       <div>
         @if(item.poster == ''){
-            <img src="default_poster.jpg" width="170" height="270"/>
+        <img src="default_poster.jpg" width="170" height="270" />
         }@else {
-            <img [ngSrc]="item.poster" [priority]="$index == 0" width="170" height="270"/>
+        <img
+          [ngSrc]="item.poster"
+          [priority]="$index == 0"
+          width="170"
+          height="270"
+        />
         }
       </div>
 
       <div>
-        <p>{{ $index }}) {{ item.titulo}}</p>
+        <p>{{ $index }}) {{ item.titulo }}</p>
         <p>
           Fecha de lanzamiento:
           {{ item.fechaLanzamiento | date : "dd-MMMM-yy" | uppercase }}
@@ -26,7 +37,6 @@
         <button (click)="eliminarPelicula(item)">Eliminar Peli</button>
       </div>
     </div>
-  }
-}@else {
-  <p>No hay peliculas para mostrar ... </p>
-}
+    }
+  </div>
+</app-listado-generico>

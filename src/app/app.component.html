@@ -1,3 +1,8 @@
+<!--
+<input type="file" style="display: none;" #CargadorArchivos>
+<button (click)="CargadorArchivos.click()">Cargar Archivo</button>
+-->
+
 <!--<p>Hello world</p>
 <p>Mi primera app de angular</p>
 <p>{{ name }}</p>
@@ -30,14 +35,18 @@
 <!--<div *ngIf="!peliculas">
   <img src="https://miro.medium.com/max/882/1*9EBHIOzhE1XfMYoKz1JcsQ.gif" />
 </div> -->
-<button (click)="clickButton()" >Clickeame</button>
+
+<!--<div *ngIf="peliculas.length == 0">
+  <p>No hay peliculas para mostrar ... </p>
+</div> -->
+
+
+<!--
+
+<button (click)="clickButton()" >Clickeame</button>-->
 
 <h2>Peliculas en cines</h2>
 <app-listado-peliculas [peliculas]="peliculasEnCines"></app-listado-peliculas>
 
 <h2>Proximos estrenos</h2>
-<app-listado-peliculas [peliculas]="peliculasEstrenos"></app-listado-peliculas>
-
-<!--<div *ngIf="peliculas.length == 0">
-  <p>No hay peliculas para mostrar ... </p>
-</div> -->
+<app-listado-peliculas [peliculas]="[]"></app-listado-peliculas>

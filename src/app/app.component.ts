@@ -1,13 +1,4 @@
-import {
-  CurrencyPipe,
-  DatePipe,
-  NgFor,
-  UpperCasePipe,
-  NgOptimizedImage,
-  NgIf,
-} from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ɵEmptyOutletComponent } from '@angular/router';
 import { ListadoPeliculasComponent } from './peliculas/listado-peliculas/listado-peliculas.component';
 
 @Component({
@@ -76,7 +67,7 @@ export class AppComponent implements OnInit {
             'https://upload.wikimedia.org/wikipedia/en/thumb/4/4a/Oppenheimer_%28film%29.jpg/220px-Oppenheimer_%28film%29.jpg',
         },
       ];
-    }, 2000);
+    }, 100);
   }
 
   public clickButton():void{
