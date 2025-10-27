@@ -17,3 +17,20 @@ export function firstCapitalLetter():ValidatorFn{
         return null;
     }
 }
+
+export function dateCannotBeFuture():ValidatorFn{
+    return(control:AbstractControl):ValidationErrors | null => {
+        const datePicked = new Date(control.value);
+        const today = new Date();
+
+        if(datePicked > today){
+            return {
+                futuro: {
+                    message: "La fecha no puede ser del futuro"
+                }
+            }
+        }
+        
+        return null;
+    }
+}

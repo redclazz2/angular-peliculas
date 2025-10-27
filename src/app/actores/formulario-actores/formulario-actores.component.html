@@ -1,1 +1,29 @@
-<p>formulario-actores works!</p>
+<form (submit)="onFormSubmit()" [formGroup]="form">
+  <mat-form-field appearance="outline">
+    <mat-label>Nombre</mat-label>
+    <input matInput [formControl]="form.controls.nombre" />
+    <mat-error>
+      {{getErrorNameField()}}
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Fecha de nacimiento</mat-label>
+    <input
+      matInput
+      [matDatepicker]="picker"
+      [formControl]="form.controls.fechaNacimiento"
+    />
+    <mat-error>{{getErrorDateField()}}</mat-error>
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  </mat-form-field>
+
+  <div class="button-form-container">
+    <button mat-flat-button [disabled]="form.invalid" type="submit">
+      Guardar
+    </button>
+    <button mat-flat-button class="secondary" routerLink="/actores">
+      Cancelar
+    </button>
+  </div>
+</form>

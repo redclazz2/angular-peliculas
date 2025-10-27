@@ -6,3 +6,18 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; height: fit
 h2{
     color: green;
 }
+
+form button{
+    margin-right: 1rem;
+}
+
+mat-form-field{
+    width: 100%;
+    max-width: 500px;
+    display: block !important;
+    margin-top: 1rem ;
+}
+
+.button-form-container{
+    margin-top: 1rem;
+}
