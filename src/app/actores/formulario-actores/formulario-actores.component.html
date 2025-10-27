@@ -18,6 +18,12 @@
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
   </mat-form-field>
 
+  <div>
+    <app-input-img 
+    [urlImagenActual]="modelo?.foto"
+    title="Foto del Actor" (archivoSeleccionado)="archivoSeleccionado($event)"></app-input-img>
+  </div>
+
   <div class="button-form-container">
     <button mat-flat-button [disabled]="form.invalid" type="submit">
       Guardar

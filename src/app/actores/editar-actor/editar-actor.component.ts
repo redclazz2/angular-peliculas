@@ -15,7 +15,8 @@ export class EditarActorComponent {
   public actor: ActorDTO = {
     id:1,
     nombre: "Tom Holland",
-    fechaNacimiento: new Date(1991,0,25)
+    fechaNacimiento: new Date(1991,0,25),
+    foto: "https://duckduckgo.com/i/e4403d588fa1ce92.jpg"
   };
 
   guardarCambios(actorEdicion:ActorCreacionDTO){

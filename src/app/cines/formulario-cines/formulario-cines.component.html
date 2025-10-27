@@ -1,0 +1,18 @@
+<form (submit)="onSubmitForm()" [formGroup]="form">
+  <mat-form-field appearance="outline">
+    <mat-label>Nombre</mat-label>
+    <input matInput [formControl]="form.controls.nombre" />
+    <mat-error>
+      {{ getErrorNameField() }}
+    </mat-error>
+  </mat-form-field>
+
+  <div class="button-form-container">
+    <button mat-flat-button [disabled]="form.invalid" type="submit">
+      Guardar
+    </button>
+    <button mat-flat-button class="secondary" routerLink="/cines">
+      Cancelar
+    </button>
+  </div>
+</form>

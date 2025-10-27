@@ -21,6 +21,7 @@ import { RouterLink } from '@angular/router';
 import { ActorCreacionDTO, ActorDTO } from '../actores';
 import moment from 'moment';
 import { dateCannotBeFuture, firstCapitalLetter } from '../../compartidos/funciones/validaciones';
+import { InputImgComponent } from "../../compartidos/componentes/input-img/input-img.component";
 
 @Component({
   selector: 'app-formulario-actores',
@@ -31,17 +32,15 @@ import { dateCannotBeFuture, firstCapitalLetter } from '../../compartidos/funcio
     ReactiveFormsModule,
     MatInputModule,
     MatDatepickerModule,
-  ],
+    InputImgComponent
+],
   templateUrl: './formulario-actores.component.html',
   styleUrl: './formulario-actores.component.css',
 })
 export class FormularioActoresComponent implements OnInit {
   ngOnInit(): void {
     if (this.modelo) {
-      this.form.patchValue({
-        nombre: this.modelo.nombre,
-        fechaNacimiento: this.modelo.fechaNacimiento
-      });
+      this.form.patchValue(this.modelo)
     }
   }
 
@@ -56,6 +55,7 @@ export class FormularioActoresComponent implements OnInit {
   public form = this.formBuilder.group({
     nombre: ['', { validators: [Validators.required, firstCapitalLetter()] }],
     fechaNacimiento: new FormControl<Date | null>(null, {validators: [Validators.required, dateCannotBeFuture()]}),
+    foto: new FormControl<File | string | null>(null)
   });
 
   public onFormSubmit() {
@@ -65,6 +65,11 @@ export class FormularioActoresComponent implements OnInit {
 
     const actor = this.form.value as ActorCreacionDTO;
     actor.fechaNacimiento = moment(actor.fechaNacimiento).toDate();
+    
+    if(typeof(actor.foto) == "string"){
+      actor.foto = undefined;
+    }
+
     this.onFormSuccessValidation.emit(actor);
   }
 
@@ -95,5 +100,9 @@ export class FormularioActoresComponent implements OnInit {
     }
 
     return '';
+  }
+
+  public archivoSeleccionado(file:File){
+    this.form.controls.foto.setValue(file);
   }
 }
