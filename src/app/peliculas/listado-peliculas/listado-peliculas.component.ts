@@ -14,9 +14,6 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [
     MatButtonModule,
     MatIconModule,
-    DatePipe,
-    UpperCasePipe,
-    CurrencyPipe,
     NgOptimizedImage,
     ListadoGenericoComponent,
   ],
