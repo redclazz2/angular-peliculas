@@ -1,52 +1,9 @@
-<!--
-<input type="file" style="display: none;" #CargadorArchivos>
-<button (click)="CargadorArchivos.click()">Cargar Archivo</button>
--->
+<app-menu></app-menu>
 
-<!--<p>Hello world</p>
-<p>Mi primera app de angular</p>
-<p>{{ name }}</p>
-<p>wiiiiiiiiiii</p>
-<p>{{ title }}</p>
+<div class="contenedor">
+  <h2>Peliculas en cines</h2>
+  <app-listado-peliculas [peliculas]="peliculasEnCines"></app-listado-peliculas>
 
-<p>Ejemplo de suma: {{ 2 + 2 }}</p>
-<p>Ejemplo de multiplicación: {{ duplicateNumber(4) }}</p> -->
-
-<!--<p>Titulo de la peli: {{ pelicula.title | uppercase }}</p>
-<p>
-  Fecha de lanzamiento: {{ pelicula.release | date : "dd-MMMM-yy" | uppercase }}
-</p>
-<p>Tax: {{ pelicula.tax | currency }}</p>
-
-
-<h4>Implementación clásica de un for</h4>
-<div *ngFor="let _pelicula of peliculas; let _index = index">
-  <p>Titulo de la peli: {{ _index }}) {{ _pelicula.title | uppercase }}</p>
-  <p>
-    Fecha de lanzamiento:
-    {{ _pelicula.release | date : "dd-MMMM-yy" | uppercase }}
-  </p>
-  <p>Tax: {{ _pelicula.tax | currency }}</p>
+  <h2>Proximos estrenos</h2>
+  <app-listado-peliculas [peliculas]="[]"></app-listado-peliculas>
 </div>
--->
-
-<!--<h4>Implementacion moderna de un for</h4>-->
-
-<!--<div *ngIf="!peliculas">
-  <img src="https://miro.medium.com/max/882/1*9EBHIOzhE1XfMYoKz1JcsQ.gif" />
-</div> -->
-
-<!--<div *ngIf="peliculas.length == 0">
-  <p>No hay peliculas para mostrar ... </p>
-</div> -->
-
-
-<!--
-
-<button (click)="clickButton()" >Clickeame</button>-->
-
-<h2>Peliculas en cines</h2>
-<app-listado-peliculas [peliculas]="peliculasEnCines"></app-listado-peliculas>
-
-<h2>Proximos estrenos</h2>
-<app-listado-peliculas [peliculas]="[]"></app-listado-peliculas>

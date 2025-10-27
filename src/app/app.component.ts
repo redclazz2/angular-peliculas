@@ -1,12 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { ListadoPeliculasComponent } from './peliculas/listado-peliculas/listado-peliculas.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { MenuComponent } from "./compartidos/componentes/menu/menu.component";
+import { RatingComponent } from "./compartidos/componentes/rating/rating.component";
+import { MatButton, MatButtonModule } from "@angular/material/button";
 
 @Component({
   selector: 'app-root',
   imports: [
     MatAutocompleteModule,
-    ListadoPeliculasComponent],
+    ListadoPeliculasComponent,
+    MenuComponent,
+    MatButtonModule
+],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
@@ -74,7 +80,7 @@ export class AppComponent implements OnInit {
     }, 100);
   }
 
-  public clickButton():void{
-    alert("You've clicked a button!");
+  public handleVoto(voto:number):void{
+    alert("Votaste: " + voto);
   }
 }

@@ -26,20 +26,4 @@ import { MatIconModule } from '@angular/material/icon';
 export class ListadoPeliculasComponent {
   @Input({ required: true })
   peliculas!: any[];
-
-  public agregarPeli(): void {
-    this.peliculas.push({
-      titulo: 'Oppenheimer 2',
-      fechaLanzamiento: new Date('2016-05-03'),
-      precio: 300.99,
-      poster: '',
-    });
-  }
-
-  public eliminarPelicula(peli: any): void {
-    const indice = this.peliculas.findIndex(
-      (peliculaActual: any) => peliculaActual.titulo == peli.titulo
-    );
-    this.peliculas.splice(indice, 1);
-  }
 }

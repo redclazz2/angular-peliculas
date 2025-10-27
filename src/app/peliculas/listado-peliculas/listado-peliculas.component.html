@@ -1,46 +1,40 @@
-<button (click)="agregarPeli()">Agregar Peli</button>
-
 <app-listado-generico [listado]="peliculas">
-    <div NoContent>
-        <p style="color: red;">No hay peliculas disponibles.</p>
-    </div>
-
-  <div Peliculas>
-    @for (item of peliculas; track $index) {
-    <div
-      class="contenedor-pelicula"
-      style="display: flex; flex-direction: row; gap: 10px"
-    >
-      <div>
-        @if(item.poster == ''){
-        <img src="default_poster.jpg" width="170" height="270" />
-        }@else {
-        <img
-          [ngSrc]="item.poster"
-          [priority]="$index == 0"
-          width="170"
-          height="270"
-        />
-        }
-      </div>
-
-      <div>
-        <p>{{ $index }}) {{ item.titulo }}</p>
-        <p>
-          Fecha de lanzamiento:
-          {{ item.fechaLanzamiento | date : "dd-MMMM-yy" | uppercase }}
-        </p>
-        <p>Precio: {{ item.precio | currency }}</p>
-      </div>
-
-      <div>
-        <button mat-flat-button (click)="eliminarPelicula(item)">
-          <mat-icon>
-            delete
-          </mat-icon>
-          Eliminar Peli</button>
-      </div>
-    </div>
-    }
+  <div NoContent>
+    <p style="color: red">No hay peliculas disponibles.</p>
   </div>
+
+  <ng-container Peliculas>
+    <div class="peliculas-container">
+      @for (pelicula of peliculas; track $index) {
+      <div class="pelicula-container">
+        <a>
+          @if(pelicula.poster == ''){
+          <img src="default_poster.jpg" width="169" height="250" />
+          }@else {
+          <img
+            [ngSrc]="pelicula.poster"
+            [priority]="$index == 0"
+            width="169"
+            height="250"
+          />
+          }
+        </a>
+
+        <p>
+          <a>{{ pelicula.titulo }}</a>
+        </p>
+
+        <div>
+          <a mat-button class="primary">Editar</a>
+          <button mat-button type="button" class="secondary">Borrar</button>
+        </div>
+          <!--<p>
+            Lanzamiento:
+            {{ pelicula.fechaLanzamiento | date : "dd-MMM-yy"}}
+          </p>
+          <p>Precio: {{ pelicula.precio | currency }}</p>-->
+      </div>
+      }
+    </div>
+  </ng-container>
 </app-listado-generico>
