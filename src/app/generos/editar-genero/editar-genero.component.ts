@@ -1,5 +1,5 @@
 import { Component, inject, Input, numberAttribute } from '@angular/core';
-import { GeneroCreacionDTO } from '../generos';
+import { GeneroCreacionDTO, GeneroDTO } from '../generos';
 import { Router } from '@angular/router';
 import { FormularioGeneroComponent } from '../formulario-genero/formulario-genero.component';
 
@@ -15,6 +15,11 @@ export class EditarGeneroComponent {
 
   private router = inject(Router);
 
+  public genero:GeneroDTO = {
+    id: 1,
+    nombre: 'Accion'
+  };
+  
   public guardarCambios(genero: GeneroCreacionDTO) {
     console.log(genero);
     this.router.navigate(['generos']);

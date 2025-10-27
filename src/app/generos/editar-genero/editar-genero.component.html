@@ -1,2 +1,5 @@
 <h2>Editar Genero</h2>
-<app-formulario-genero (onFormValidationSuccess)="guardarCambios($event)"></app-formulario-genero>
+<app-formulario-genero 
+    (onFormValidationSuccess)="guardarCambios($event)"
+    [modelo]="genero"
+></app-formulario-genero>
