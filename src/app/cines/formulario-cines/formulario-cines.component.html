@@ -7,6 +7,9 @@
     </mat-error>
   </mat-form-field>
 
+  <h4>Ubicación</h4>
+  <app-mapa (coordenadaSeleccionada)="coordenadaSeleccionada($event)" [coordenadasIniciales]="coordenadasIniciales"></app-mapa>
+
   <div class="button-form-container">
     <button mat-flat-button [disabled]="form.invalid" type="submit">
       Guardar

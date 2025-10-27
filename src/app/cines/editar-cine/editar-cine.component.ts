@@ -14,7 +14,9 @@ export class EditarCineComponent {
 
   cine:CineDTO = {
     id: 1,
-    nombre : "Caracoli"
+    nombre : "Caracoli",
+    latitud: 7.07195918466638,
+    longitud: -73.10491418747604
   }
 
   guardarCambios(cine:CineCreacionDTO){
