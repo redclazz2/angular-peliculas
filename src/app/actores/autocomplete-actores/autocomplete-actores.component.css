@@ -1,0 +1,10 @@
+img{
+    vertical-align: middle;
+    margin-right: 8px;
+    width: 35px;
+    height: 45px;
+}
+
+table mat-icon{
+    cursor: pointer;
+}
