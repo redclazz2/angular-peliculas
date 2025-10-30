@@ -28,7 +28,7 @@ export class FormularioGeneroComponent implements OnInit{
   private formBuilder = inject(FormBuilder);
 
   public form = this.formBuilder.group({
-    nombre: [this.modelo?.nombre ?? "", {validators: [Validators.required, firstCapitalLetter()]}],
+    nombre: [this.modelo?.nombre ?? "", {validators: [Validators.required, firstCapitalLetter(), Validators.maxLength(50)]}],
   });
 
   public getErrorNameField():string{
@@ -39,6 +39,10 @@ export class FormularioGeneroComponent implements OnInit{
 
     if(nombre.hasError('primeraLetraMayuscula')){
       return nombre.getError('primeraLetraMayuscula');
+    }
+
+    if(nombre.hasError('maxlength')){
+      return `El campo nombre no debe tener más de ${nombre.getError('maxlength').requiredLength} caracteres`
     }
     return '';
   }

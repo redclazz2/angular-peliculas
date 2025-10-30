@@ -21,3 +21,11 @@ mat-form-field{
 .button-form-container{
     margin-top: 1rem;
 }
+
+.indice-elementos{
+    margin: 1rem;
+}
+
+.indice-elementos a{
+    margin-right: 1rem;
+}

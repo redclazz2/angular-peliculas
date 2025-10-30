@@ -1,5 +1,12 @@
 <h2>Editar Genero</h2>
-<app-formulario-genero 
+
+@if(genero){
+    <app-mostrar-errores [errores]="errores"></app-mostrar-errores>
+    <app-formulario-genero 
     (onFormValidationSuccess)="guardarCambios($event)"
     [modelo]="genero"
 ></app-formulario-genero>
+}@else{
+    <app-loading-gif></app-loading-gif>
+}
+
