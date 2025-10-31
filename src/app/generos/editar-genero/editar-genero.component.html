@@ -1,12 +1,6 @@
-<h2>Editar Genero</h2>
-
-@if(genero){
-    <app-mostrar-errores [errores]="errores"></app-mostrar-errores>
-    <app-formulario-genero 
-    (onFormValidationSuccess)="guardarCambios($event)"
-    [modelo]="genero"
-></app-formulario-genero>
-}@else{
-    <app-loading-gif></app-loading-gif>
-}
-
+<app-editar-entidad
+    [id]="id"
+    titulo="Editar Genero"
+    rutaIndice="/generos"
+    [formulario]="formulario"
+></app-editar-entidad>

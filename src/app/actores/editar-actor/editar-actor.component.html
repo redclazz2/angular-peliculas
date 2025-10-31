@@ -1,7 +1,6 @@
-<h2>Editar Actor</h2>
-@if(actor){
-    <app-mostrar-errores [errores]="errores"></app-mostrar-errores>
-<app-formulario-actores (onFormSuccessValidation)="guardarCambios($event)" [modelo]="actor"></app-formulario-actores>
-}@else {
-    <app-loading-gif></app-loading-gif>
-}
+<app-editar-entidad
+    [id]="id"
+    titulo="Editar Actor"
+    rutaIndice="/actores"
+    [formulario]="formulario"
+></app-editar-entidad>
