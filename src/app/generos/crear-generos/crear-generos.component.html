@@ -1,4 +1,5 @@
-<h2>Crear Genero</h2>
-
-<app-mostrar-errores [errores]="errores"></app-mostrar-errores>
-<app-formulario-genero (onFormValidationSuccess)="guardarCambios($event)"></app-formulario-genero>
+<app-crear-entidad
+    titulo="Crear Genero"
+    rutaIndice="/generos"
+    [formulario]="formularioGeneros"
+></app-crear-entidad>

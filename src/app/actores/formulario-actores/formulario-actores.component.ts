@@ -48,7 +48,7 @@ export class FormularioActoresComponent implements OnInit {
   public modelo?: ActorDTO;
 
   @Output()
-  onFormSuccessValidation: EventEmitter<ActorCreacionDTO> = new EventEmitter();
+  onFormValidationSuccess: EventEmitter<ActorCreacionDTO> = new EventEmitter();
 
   private formBuilder = inject(FormBuilder);
 
@@ -70,7 +70,7 @@ export class FormularioActoresComponent implements OnInit {
       actor.foto = undefined;
     }
 
-    this.onFormSuccessValidation.emit(actor);
+    this.onFormValidationSuccess.emit(actor);
   }
 
   public getErrorNameField(){
