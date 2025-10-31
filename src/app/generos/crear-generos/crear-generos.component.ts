@@ -19,7 +19,7 @@ export class CrearGenerosComponent {
 
   public guardarCambios(genero: GeneroCreacionDTO) {
     this.generosService
-      .crearGenero(genero)
+      .crear(genero)
       .subscribe({
         next: () => this.router.navigate(['/generos']),
         error: err => { 

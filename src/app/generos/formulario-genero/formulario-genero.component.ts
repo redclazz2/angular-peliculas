@@ -5,10 +5,11 @@ import { MatFormField, MatLabel, MatError } from "@angular/material/form-field";
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { GeneroCreacionDTO, GeneroDTO } from '../generos';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-formulario-genero',
-  imports: [MatFormField, MatLabel, MatError, ReactiveFormsModule, MatInputModule, MatButtonModule],
+  imports: [MatFormField, MatLabel, MatError, ReactiveFormsModule, MatInputModule, MatButtonModule, RouterLink],
   templateUrl: './formulario-genero.component.html',
   styleUrl: './formulario-genero.component.css'
 })
