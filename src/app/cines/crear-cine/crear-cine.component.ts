@@ -7,7 +7,7 @@ import { CinesService } from '../cines.service';
 
 @Component({
   selector: 'app-crear-cine',
-  imports: [FormularioCinesComponent, CrearEntidadComponent],
+  imports: [ CrearEntidadComponent],
   templateUrl: './crear-cine.component.html',
   styleUrl: './crear-cine.component.css',
   providers: [
