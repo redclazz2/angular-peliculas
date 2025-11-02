@@ -1,2 +1,6 @@
-<h2>Editar Cine</h2>
-<app-formulario-cines [modelo]="cine" (formSubmit)="guardarCambios($event)"></app-formulario-cines>
+<app-editar-entidad
+    [id] = "id"
+    titulo = "Editar Actor"
+    rutaIndice = "/cines"
+    [formulario]="formulario"
+></app-editar-entidad>

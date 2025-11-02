@@ -1,25 +1,21 @@
 import { Component, Input, numberAttribute } from '@angular/core';
-import { CineCreacionDTO, CineDTO } from '../cines';
 import { FormularioCinesComponent } from "../formulario-cines/formulario-cines.component";
+import { CinesService } from '../cines.service';
+import { EditarEntidadComponent } from '../../compartidos/componentes/editar-entidad/editar-entidad.component';
+import { SERVICIO_CRUD_TOKEN } from '../../compartidos/proveedores/Proveedores';
 
 @Component({
   selector: 'app-editar-cine',
-  imports: [FormularioCinesComponent],
+  imports: [EditarEntidadComponent],
   templateUrl: './editar-cine.component.html',
-  styleUrl: './editar-cine.component.css'
+  styleUrl: './editar-cine.component.css',
+  providers: [{
+    provide: SERVICIO_CRUD_TOKEN ,useClass: CinesService
+  }]
 })
 export class EditarCineComponent {
   @Input({transform: numberAttribute})
   id!:number;
 
-  cine:CineDTO = {
-    id: 1,
-    nombre : "Caracoli",
-    latitud: 7.07195918466638,
-    longitud: -73.10491418747604
-  }
-
-  guardarCambios(cine:CineCreacionDTO){
-    console.log("Editando", cine);
-  }
+  formulario = FormularioCinesComponent;
 }

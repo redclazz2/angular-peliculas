@@ -34,7 +34,7 @@ export class FormularioCinesComponent implements OnInit{
    coordenadasIniciales:Coordenada[] = [];
 
    @Output()
-   formSubmit = new EventEmitter<CineCreacionDTO>();
+   onFormValidationSuccess = new EventEmitter<CineCreacionDTO>();
 
    private formBuilder = inject(FormBuilder);
    public form = this.formBuilder.group({
@@ -57,7 +57,7 @@ export class FormularioCinesComponent implements OnInit{
     if(!this.form.valid) return;
 
     const cine = this.form.value as CineCreacionDTO;
-    this.formSubmit.emit(cine);
+    this.onFormValidationSuccess.emit(cine);
    }
 
    coordenadaSeleccionada(coordenada: Coordenada){
