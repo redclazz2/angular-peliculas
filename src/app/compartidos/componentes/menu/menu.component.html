@@ -1,39 +1,41 @@
 <mat-toolbar>
-    <span>
-        <a mat-button routerLink="">
-            <h1>Manager Peliculas</h1>
-        </a>
-    </span>
+  <span>
+    <a mat-button routerLink="">
+      <h1>Manager Peliculas</h1>
+    </a>
+  </span>
 
-    <span>
-        <a mat-button routerLink="peliculas/filtrar">
-            <mat-icon>search</mat-icon> Buscar Peliculas
-        </a>
-    </span>
+  <span>
+    <a mat-button routerLink="peliculas/filtrar">
+      <mat-icon>search</mat-icon> Buscar Peliculas
+    </a>
+  </span>
 
-    <span>
+  <app-autorizado rol="admin">
+    <ng-container autorizado>
+      <span>
         <a mat-button routerLink="generos">
-            <mat-icon>g_mobiledata</mat-icon> Generos
+          <mat-icon>g_mobiledata</mat-icon> Generos
         </a>
-    </span>
+      </span>
 
-    <span>
+      <span>
         <a mat-button routerLink="actores">
-            <mat-icon>account_circle</mat-icon> Actores
+          <mat-icon>account_circle</mat-icon> Actores
         </a>
-    </span>
+      </span>
 
-    <span>
+      <span>
         <a mat-button routerLink="cines">
-            <mat-icon>account_circle</mat-icon> Cines
+          <mat-icon>account_circle</mat-icon> Cines
         </a>
-    </span>
+      </span>
 
-    <span>
+      <span>
         <a mat-button routerLink="peliculas/crear">
-            <mat-icon>account_circle</mat-icon> Crear Pelicula
+          <mat-icon>account_circle</mat-icon> Crear Pelicula
         </a>
-    </span>
-
-
+      </span>
+    </ng-container>
+  </app-autorizado>
 </mat-toolbar>

@@ -17,7 +17,7 @@ export class GenerosService implements SerivicioCRUD<GeneroDTO,GeneroCreacionDTO
   constructor() { }
 
   public obtenerTodos():Observable<GeneroDTO[]>{
-    return this.http.get<GeneroDTO[]>(this.urlBase);
+    return this.http.get<GeneroDTO[]>(`${this.urlBase}/todos`);
   }
 
   public obtenerPaginados(paginacion:PaginacionDTO):Observable<HttpResponse<GeneroDTO[]>>{

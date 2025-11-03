@@ -21,6 +21,9 @@ export class MapaComponent implements OnInit {
   @Input()
   coordenadasIniciales: Coordenada[] = [];
 
+  @Input()
+  soloLectura : boolean = false;
+
   @Output()
   coordenadaSeleccionada = new EventEmitter<Coordenada>();
 
@@ -29,7 +32,7 @@ export class MapaComponent implements OnInit {
       iconSize: [25,41],
       iconAnchor: [13,41],
       iconUrl: 'assets/marker-icon.png',
-      iconRetinaUrl: 'assets/marker-icon-2x.png',
+      iconRetinaUrl: 'assets/marker-icon.png',
       shadowUrl: 'assets/marker-shadow.png'
     })
   };
@@ -49,6 +52,10 @@ export class MapaComponent implements OnInit {
   capas:Marker<any>[] = [];
 
   manejarClick(event:LeafletMouseEvent){
+    if(this.soloLectura){
+      return;
+    }
+
     this.capas = [];
 
     this.capas.push(

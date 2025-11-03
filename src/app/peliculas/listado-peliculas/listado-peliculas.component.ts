@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { RouterLink } from '@angular/router';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { PeliculasService } from '../peliculas.service';
+import { AutorizadoComponent } from "../../seguridad/autorizado/autorizado.component";
 
 @Component({
   selector: 'app-listado-peliculas',
@@ -20,8 +21,9 @@ import { PeliculasService } from '../peliculas.service';
     NgOptimizedImage,
     ListadoGenericoComponent,
     RouterLink,
-    SweetAlert2Module
-  ],
+    SweetAlert2Module,
+    AutorizadoComponent
+],
   templateUrl: './listado-peliculas.component.html',
   styleUrl: './listado-peliculas.component.css',
 })
