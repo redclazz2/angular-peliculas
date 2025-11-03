@@ -25,14 +25,26 @@
         </p>
 
         <div>
-          <a mat-button class="primary">Editar</a>
-          <button mat-button type="button" class="secondary">Borrar</button>
+          <a
+            mat-button
+            class="primary"
+            [routerLink]="['/peliculas/editar/', pelicula.id]"
+            >Editar</a
+          >
+          <button
+            mat-button
+            type="button"
+            class="secondary"
+            [swal]="{
+              title: 'Confirmacion',
+              text: '¿Deseas borrar este registro?',
+              showCancelButton: true
+            }"
+            (confirm)="borrar(pelicula.id)"
+          >
+            Borrar
+          </button>
         </div>
-          <!--<p>
-            Lanzamiento:
-            {{ pelicula.fechaLanzamiento | date : "dd-MMM-yy"}}
-          </p>
-          <p>Precio: {{ pelicula.precio | currency }}</p>-->
       </div>
       }
     </div>

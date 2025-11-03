@@ -15,6 +15,14 @@ export class LandingPageComponent{
   constructor(
     private readonly peliculasService : PeliculasService
   ) {
+    this.cargarPeliculas();
+  }
+
+  public peliculaBorrada(){
+    this.cargarPeliculas();
+  }
+
+  private cargarPeliculas(){
     this.peliculasService.obtenerLandingPage().subscribe(result =>{
       this.peliculasEnCines = result.enCines;
       this.peliculasEstrenos = result.proximosEstrenos;
