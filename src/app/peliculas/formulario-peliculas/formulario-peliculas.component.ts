@@ -99,7 +99,6 @@ export class FormularioPeliculasComponent implements OnInit {
     pelicula.fechaLanzamiento = moment(pelicula.fechaLanzamiento).toDate();
     pelicula.actores = this.actoresSeleccionados;
 
-
     this.posteoFormulario.emit(pelicula);
   }
 
