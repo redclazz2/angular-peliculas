@@ -38,4 +38,24 @@
       </span>
     </ng-container>
   </app-autorizado>
+
+  <div class="espacio"></div>
+  <div>
+    <app-autorizado style="display: inline;">
+      <ng-container autorizado>
+        <a mat-button class="secondary" (click)="securityService.logout()">
+          Logout
+        </a>
+      </ng-container>
+
+      <ng-container noAutorizado>
+        <a mat-button routerLink="/registro">
+          Registro
+        </a>
+        <a mat-button routerLink="/login">
+          Iniciar Sesion
+        </a>
+      </ng-container>
+    </app-autorizado>
+  </div>
 </mat-toolbar>
