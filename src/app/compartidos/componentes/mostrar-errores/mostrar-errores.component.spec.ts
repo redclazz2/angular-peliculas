@@ -1,23 +1,30 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {TestBed} from "@angular/core/testing";
+import { MostrarErroresComponent } from "./mostrar-errores.component";
 
-import { MostrarErroresComponent } from './mostrar-errores.component';
+describe("MostrarErroresComponent", ()=>{
+    beforeEach( async () =>{
+        await TestBed.configureTestingModule({
+            imports: [MostrarErroresComponent]
+        }).compileComponents();
+    });
 
-describe('MostrarErroresComponent', () => {
-  let component: MostrarErroresComponent;
-  let fixture: ComponentFixture<MostrarErroresComponent>;
+    it('Should create the component', () =>{
+        const fixture = TestBed.createComponent(MostrarErroresComponent);
+        const componente = fixture.componentInstance;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [MostrarErroresComponent]
-    })
-    .compileComponents();
+        expect(componente).toBeTruthy();
+    });
 
-    fixture = TestBed.createComponent(MostrarErroresComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    it("Should display a list item when there's an error", () =>{
+        const fixture = TestBed.createComponent(MostrarErroresComponent);
+        const componente = fixture.componentInstance; //Obtiene la instancia del componente
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+        componente.errores = ['Error']; //Cambia las propiedades del componente
+
+        fixture.detectChanges(); //Actualiza las propiedades
+        
+        //Prueba q se hayan aplicado los cambios al HTML
+        const compilado = fixture.nativeElement as HTMLElement;   
+        expect(compilado.querySelectorAll('li').length).toBe(1);
+    });
 });

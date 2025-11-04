@@ -1,7 +1,7 @@
 <h2>{{ title }}</h2>
 
-@if(entidades){
-<ng-container>
+@if(entidades.length > 0){
+<ng-container contenido>
   <table
     mat-table
     [dataSource]="entidades"
@@ -57,5 +57,5 @@
 }
 
 <button mat-flat-button routerLink="{{ rutaCrear }}">
-  Crear {{ title.toLowerCase() }}
+  Crear {{ title }}
 </button>
